@@ -123,7 +123,7 @@ def recommend_portfolio(intent_request):
     first_name = get_slots(intent_request)["firstName"]
     
     age = get_slots(intent_request)["age"]
-    if age is < 0 or age > 65:
+    if age < 0 or age > 65:
         return build_validation_result(
             False,
             "age",
@@ -132,7 +132,7 @@ def recommend_portfolio(intent_request):
         )
 
     investment_amount = get_slots(intent_request)["investmentAmount"]
-    if investmentAmount is not >= 5000:
+    if investmentAmount < 5000:
         return build_validation_result(
             False,
             "investmentAmount",
